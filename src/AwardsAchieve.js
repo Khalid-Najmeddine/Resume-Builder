@@ -1,3 +1,4 @@
+//Awards and Achievements
 import React from "react"
 
 function awardsAchievements({handleClick}) {

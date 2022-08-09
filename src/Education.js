@@ -1,3 +1,4 @@
+//Education
 import React from "react"
 
 function education({handleClick}) {
