@@ -1,4 +1,4 @@
-//Contact Information
+//Contact Information ! 
 import React from 'react'
 import {TextInput} from '@mantine/core'
 
@@ -84,7 +84,7 @@ function ContactInformation(props) {
         required
         onChange={(event) => setContactInfo({...contactInfo, email:event.currentTarget.value})}
       />
-      
+
       <TextInput 
         value={contactInfo.linkedInURL}
         placeholder="www.linkedin.com/in/Joe-Schmoe" 
