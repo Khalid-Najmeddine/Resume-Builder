@@ -1,3 +1,4 @@
+//Choose Resume Template (develop after alpha stage)
 import { Grid } from '@mantine/core';
 
 function Demo() {

@@ -1,3 +1,4 @@
+//skills 
 import { Grid } from '@mantine/core';
 
 import React from "react"

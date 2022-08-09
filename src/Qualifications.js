@@ -1,3 +1,4 @@
+//Qualifications
 import { useState } from 'react';
 import { RichTextEditor } from '@mantine/rte';
 import { Grid } from '@mantine/core';
@@ -110,12 +111,12 @@ import React from "react"
 // )
 // }
 
-function Demo() {
-  return (
-    <Grid columns={24}>
-      <Grid.Col span={12}>1</Grid.Col>
-      <Grid.Col span={6}>2</Grid.Col>
-      <Grid.Col span={6}>3</Grid.Col>
-    </Grid>
-  );
-}
+// function Demo() {
+//   return (
+//     <Grid columns={24}>
+//       <Grid.Col span={12}>1</Grid.Col>
+//       <Grid.Col span={6}>2</Grid.Col>
+//       <Grid.Col span={6}>3</Grid.Col>
+//     </Grid>
+//   );
+// }
