@@ -5,7 +5,7 @@ import { Button } from '@mantine/core'
 function Homepage(props) {
   const { setShowHomepage, setShowContactInfo } = props
 
-  function showContactInfo() {
+  function nextPage() {
     setShowHomepage((prev) => !prev)
     setShowContactInfo((prev) => !prev)
   }
@@ -24,7 +24,7 @@ function Homepage(props) {
         the blanks. With our online resume builder, you can create a resume that showcases your greatest strengths and
         unique professional and educational experiences.
       </p>
-      <Button onClick={showContactInfo}>Try for Free</Button>
+      <Button onClick={nextPage}>Try for Free</Button>
     </main>
   )
 }
