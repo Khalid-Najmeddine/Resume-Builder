@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Button } from '@mantine/core'
+import Homepage from './Homepage'
+import ContactInformation from './ContactInformation'
 
 function App() {
+  const [showHomepage, setShowHomepage] = React.useState(true)
+  const [showContactInfo, setShowContactInfo] = React.useState(false)
+  // Contat Information
+  const [contactInfo, setContactInfo] = React.useState({
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    city: '',
+    stateOrProvince: '',
+    country: '',
+    postalCode: '',
+    email: '',
+    linkedInURL: '',
+  })
+  console.log(contactInfo)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {showHomepage && <Homepage setShowHomepage={setShowHomepage} setShowContactInfo={setShowContactInfo} />}
+      {showContactInfo && <ContactInformation contactInfo={contactInfo} setContactInfo={setContactInfo} />}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
