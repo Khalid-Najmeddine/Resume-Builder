@@ -6,7 +6,7 @@ import ContactInformation from './ContactInformation'
 function App() {
   const [showHomepage, setShowHomepage] = React.useState(true)
   const [showContactInfo, setShowContactInfo] = React.useState(false)
-  // Contat Information
+  // Contact Information
   const [contactInfo, setContactInfo] = React.useState({
     firstName: '',
     lastName: '',
