@@ -7,13 +7,37 @@ body {
   width: 80%;
   margin-right: auto;
   margin-left: auto;
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
 }
 
 .homepage {
-  text-align:center;
+  text-align: center;
 }
+
 .homepage-Description {
   text-align: left;
-
 }
 
+.skills-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.skills-list {
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+}
