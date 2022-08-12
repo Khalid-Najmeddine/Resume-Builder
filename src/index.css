@@ -11,9 +11,7 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   text-align: center;
 }
 
@@ -23,6 +21,56 @@ h3 {
 
 .homepage-Description {
   text-align: left;
+}
+
+.names-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.contactInformation-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.education-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.educationSection-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.qualifications-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.qualifications-list {
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
 }
 
 .skills-button-container {
@@ -42,3 +90,40 @@ h3 {
   font-size: 1.2rem;
   font-family: 'Inter', sans-serif;
 }
+
+.workExperience-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.workExperienceSection-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.awards-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.awards-list {
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+
+

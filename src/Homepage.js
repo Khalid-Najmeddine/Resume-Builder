@@ -3,11 +3,10 @@ import React from 'react'
 import { Button } from '@mantine/core'
 
 function Homepage(props) {
-  const { setShowHomepage, setShowContactInfo } = props
+  const { setShowPages } = props
 
-  function nextPage() {
-    setShowHomepage((prev) => !prev)
-    setShowContactInfo((prev) => !prev)
+  function homePageButton() {
+    setShowPages((prev) => ({ ...prev, showHomepage: !prev.showHomepage, showContactInfo: !prev.showContactInfo }))
   }
 
   return (
@@ -24,7 +23,7 @@ function Homepage(props) {
         the blanks. With our online resume builder, you can create a resume that showcases your greatest strengths and
         unique professional and educational experiences.
       </p>
-      <Button onClick={nextPage}>Try for Free</Button>
+      <Button onClick={homePageButton}>Give it a try</Button>
     </main>
   )
 }

@@ -1,9 +1,8 @@
-
 import { Button, Center, List, TextInput } from '@mantine/core'
 import React from 'react'
 
 function Skills(props) {
-  const { skills, setSkills } = props
+  const { skills, setSkills, setShowPages } = props
   const [skill, setSkill] = React.useState('')
 
   function addSkill() {
@@ -15,12 +14,20 @@ function Skills(props) {
     setSkills((prevSkills) => [...prevSkills.slice(0, -1)])
   }
 
-  function nextPage() {
-    if (skills.length < 5) {
-      alert('You must have at least 5 skills')
-    } else {
-      // render the next page
-    }
+  function backToEducation() {
+    setShowPages((prev) => ({
+      ...prev,
+      showSkillsInfo: !prev.showSkillsInfo,
+      showEducationInfo: !prev.showEducationInfo,
+    }))
+  }
+
+  function continueToWorkExperience() {
+    setShowPages((prev) => ({
+      ...prev,
+      showSkillsInfo: !prev.showSkillsInfo,
+      showWorkExpInfo: !prev.showWorkExpInfo,
+    }))
   }
 
   const skillElements = skills.map((skill) => <List.Item>{skill}</List.Item>)
@@ -36,7 +43,7 @@ function Skills(props) {
           label="Skill"
           required
           value={skill}
-          onChange={(e) => setSkill(e.currentTarget.value)}
+          onChange={(event) => setSkill(event.currentTarget.value)}
         />
       </Center>
       <div className="skills-button-container">
@@ -48,9 +55,11 @@ function Skills(props) {
         </Button>
       </div>
       <div className="skills-button-container">
-        <Button size="md">Go Back</Button>
-        <Button size="md" onClick={nextPage}>
-          Continue
+        <Button size="md" onClick={backToEducation}>
+          Go Back to Education
+        </Button>
+        <Button size="md" onClick={continueToWorkExperience}>
+          Continue to Work Experience
         </Button>
       </div>
     </div>
