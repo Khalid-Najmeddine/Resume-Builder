@@ -14,11 +14,11 @@ function Skills(props) {
     setSkills((prevSkills) => [...prevSkills.slice(0, -1)])
   }
 
-  function backToEducation() {
+  function backToQualifications() {
     setShowPages((prev) => ({
       ...prev,
       showSkillsInfo: !prev.showSkillsInfo,
-      showEducationInfo: !prev.showEducationInfo,
+      showQualificationsInfo: !prev.showQualificationsInfo,
     }))
   }
 
@@ -55,8 +55,8 @@ function Skills(props) {
         </Button>
       </div>
       <div className="skills-button-container">
-        <Button size="md" onClick={backToEducation}>
-          Go Back to Education
+        <Button size="md" onClick={backToQualifications}>
+          Go Back to Summary of Qualification
         </Button>
         <Button size="md" onClick={continueToWorkExperience}>
           Continue to Work Experience

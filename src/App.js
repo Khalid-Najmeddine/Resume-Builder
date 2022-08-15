@@ -6,7 +6,7 @@ import Education from './Education.js'
 import Qualifications from './Qualifications.js'
 import WorkExperienceInformation from './WorkExperience.js'
 import Awards from './Awards.js'
-// import ResumePreview from './ResumePreview.js'!
+import ResumePreview from './ResumePreview.js'
 
 function App() {
   const [showPages, setShowPages] = React.useState({
@@ -72,7 +72,7 @@ function App() {
       {showPages.showQualificationsInfo && (
         <Qualifications
           setShowPages={setShowPages}
-          qualifications={qualificationsInfo}
+          qualificationsInfo={qualificationsInfo}
           setQualificationsInfo={setQualificationsInfo}
         />
       )}
@@ -85,7 +85,17 @@ function App() {
         />
       )}
       {showPages.showAwardsInfo && <Awards setShowPages={setShowPages} awards={awardsInfo} setAwards={setAwardsInfo} />}
-      {/* {showPages.showResumePreview && <ResumePreview setShowPages={setShowPages} />} */}
+      {showPages.showResumePreview && (
+        <ResumePreview
+          // setShowPages={setShowPages}
+          contactInfo={contactInfo}
+          educationInfo={educationInfo}
+          qualificationsInfo={qualificationsInfo}
+          skillsInfo={skillsInfo}
+          workExperienceInfo={workExperienceInfo}
+          awardsInfo={awardsInfo}
+        />
+      )}
     </div>
   )
 }
