@@ -54,8 +54,12 @@ function Awards(props) {
         </Button>
       </div>
       <div className="awards-button-container">
-        <Button size="md" onClick={backToWorkExperience}>Go Back to Work Experience</Button>
-        <Button size="md" onClick={continueToResumePreview}>Continue to Resume Preview</Button>
+        <Button size="md" onClick={backToWorkExperience}>
+          Go Back to Work Experience
+        </Button>
+        <Button size="md" onClick={continueToResumePreview}>
+          Continue to Resume Preview
+        </Button>
       </div>
     </div>
   )

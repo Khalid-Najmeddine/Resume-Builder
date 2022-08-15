@@ -1,9 +1,8 @@
-//Contact Information !!
 import React from 'react'
 import {Button, TextInput} from '@mantine/core'
 
 function ContactInformation(props) {
-  const {setShowPages, contactInfo, setContactInfo, setEducation} = props
+  const {setShowPages, contactInfo, setContactInfo} = props
   
     function backToHomepage() {
       setShowPages((prev) => ({...prev, showContactInfo: !prev.showContactInfo, showHomepage: !prev.showHomepage}))

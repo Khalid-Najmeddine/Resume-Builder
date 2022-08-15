@@ -1,17 +1,37 @@
-//Work Experience !!
 import React from 'react'
-import { Button, TextInput } from '@mantine/core'
+import { Button, TextInput, Card, Text, SimpleGrid } from '@mantine/core'
 
 function WorkExperienceInformation(props) {
-  const { setShowPages, workExperienceInfo, setWorkExperienceInfo, setWorkExpInfo, setAwards } = props
+  const { setShowPages, workExperienceInfo, setWorkExperienceInfo } = props
+  const [workExperience, setWorkExperience] = React.useState({
+    jobTitle: '',
+    companyOrOrganization: '',
+    city: '',
+    stateOrProvince: '',
+    country: '',
+    startMonth: '',
+    startYear: '',
+    endMonth: '',
+    endYear: '',
+  })
 
   function addWorkExperience() {
-    setWorkExpInfo((prevWorkExperience) => [...prevWorkExperience, workExperienceInfo])
-    setWorkExperienceInfo('')
+    setWorkExperienceInfo((prevWorkExperience) => [...prevWorkExperience, workExperience])
+    setWorkExperience({
+      jobTitle: '',
+      companyOrOrganization: '',
+      city: '',
+      stateOrProvince: '',
+      country: '',
+      startMonth: '',
+      startYear: '',
+      endMonth: '',
+      endYear: '',
+    })
   }
 
   function deleteWorkExperience() {
-    setWorkExpInfo((prevWorkExperience) => [...prevWorkExperience.slice(0, -1)])
+    setWorkExperienceInfo((prevWorkExperience) => [...prevWorkExperience.slice(0, -1)])
   }
 
   function backToSkills() {
@@ -30,94 +50,136 @@ function WorkExperienceInformation(props) {
     }))
   }
 
+  const workExperienceElements = workExperienceInfo.map((workExperience) => {
+    return (
+      <Card shadow="sm" p="lg" radius="md" withBorder key={workExperience.jobTitle}>
+        <Text>
+          <strong>Job Title:</strong> {workExperience.jobTitle}
+        </Text>
+        <Text>
+          <strong>Company/Organization:</strong> {workExperience.companyOrOrganization}
+        </Text>
+        <Text>
+          <strong>City:</strong> {workExperience.city}
+        </Text>
+        <Text>
+          <strong>State/Province:</strong> {workExperience.stateOrProvince}
+        </Text>
+        <Text>
+          <strong>Country:</strong> {workExperience.country}
+        </Text>
+        <Text>
+          <strong>Start Month:</strong> {workExperience.startMonth}
+        </Text>
+        <Text>
+          <strong>Start Year:</strong> {workExperience.startYear}
+        </Text>
+        <Text>
+          <strong>End Month:</strong> {workExperience.endMonth}
+        </Text>
+        <Text>
+          <strong>End Year:</strong> {workExperience.endYear}
+        </Text>
+      </Card>
+    )
+  })
+
   return (
     <div>
       <h1> Work Experience </h1>
       <form>
         <TextInput
-          value={workExperienceInfo.jobTitle}
-          placeholder="University of Calgary"
-          label="College/University"
+          value={workExperience.jobTitle}
+          placeholder="Front-End Developer"
+          label="Job Title"
           required
-          onChange={(event) => setWorkExperienceInfo({ ...workExperienceInfo, jobTitle: event.currentTarget.value })}
+          onChange={(event) => setWorkExperience({ ...workExperience, jobTitle: event.currentTarget.value })}
         />
         <TextInput
-          value={workExperienceInfo.companyOrOrganization}
-          placeholder="Software Engineering"
-          label="Field of Study"
+          value={workExperience.companyOrOrganization}
+          placeholder="Global Talent Accelerator"
+          label="Company/Organization"
           required
           onChange={(event) =>
-            setWorkExperienceInfo({ ...workExperienceInfo, companyOrOrganization: event.currentTarget.value })
+            setWorkExperience({ ...workExperience, companyOrOrganization: event.currentTarget.value })
           }
         />
         <TextInput
-          value={workExperienceInfo.city}
-          placeholder="Bachelor's Degree"
-          label="Degree/Program"
-          required
-          onChange={(event) => setWorkExperienceInfo({ ...workExperienceInfo, city: event.currentTarget.value })}
-        />
-        <TextInput
-          value={workExperienceInfo.stateOrProvince}
+          value={workExperience.city}
           placeholder="Calgary"
           label="City"
           required
-          onChange={(event) =>
-            setWorkExperienceInfo({ ...workExperienceInfo, stateOrProvince: event.currentTarget.value })
-          }
+          onChange={(event) => setWorkExperience({ ...workExperience, city: event.currentTarget.value })}
         />
         <TextInput
-          value={workExperienceInfo.country}
+          value={workExperience.stateOrProvince}
           placeholder="Alberta"
           label="State or Province"
           required
-          onChange={(event) => setWorkExperienceInfo({ ...workExperienceInfo, country: event.currentTarget.value })}
+          onChange={(event) => setWorkExperience({ ...workExperience, stateOrProvince: event.currentTarget.value })}
         />
         <TextInput
-          value={workExperienceInfo.startMonth}
+          value={workExperience.country}
           placeholder="Canada"
-          label="startMonth"
+          label="Country"
           required
-          onChange={(event) => setWorkExperienceInfo({ ...workExperienceInfo, startMonth: event.currentTarget.value })}
+          onChange={(event) => setWorkExperience({ ...workExperience, country: event.currentTarget.value })}
         />
         <TextInput
-          value={workExperienceInfo.startYear}
+          value={workExperience.startMonth}
           placeholder="June"
-          label="Graduation Month"
+          label="Start Month"
           required
-          onChange={(event) => setWorkExperienceInfo({ ...workExperienceInfo, startYear: event.currentTarget.value })}
+          onChange={(event) => setWorkExperience({ ...workExperience, startMonth: event.currentTarget.value })}
         />
         <TextInput
-          value={workExperienceInfo.endMonth}
-          placeholder="2017"
-          label="Graduation Year"
+          value={workExperience.startYear}
+          placeholder="2018"
+          label="Start Year"
           required
-          onChange={(event) => setWorkExperienceInfo({ ...workExperienceInfo, endMonth: event.currentTarget.value })}
+          onChange={(event) => setWorkExperience({ ...workExperience, startYear: event.currentTarget.value })}
         />
         <TextInput
-          value={workExperienceInfo.endYear}
-          placeholder="2017"
-          label="Graduation Year"
+          value={workExperience.endMonth}
+          placeholder="June"
+          label="End Month"
           required
-          onChange={(event) => setWorkExperienceInfo({ ...workExperienceInfo, endYear: event.currentTarget.value })}
+          onChange={(event) => setWorkExperience({ ...workExperience, endMonth: event.currentTarget.value })}
         />
-        <div className="workExperience-button-container">
-          <Button size="md" onClick={addWorkExperience}>
-            Add Work Experience
-          </Button>
-          <Button size="md" onClick={deleteWorkExperience}>
-            Delete Work Experience
-          </Button>
-        </div>
-        <div className="workExperienceSection-button-container">
-          <Button size="md" onClick={backToSkills}>
-            Go Back to Skills Section
-          </Button>
-          <Button size="md" onClick={continueToAwards}>
-            Continue to Awards Section
-          </Button>
-        </div>
+        <TextInput
+          value={workExperience.endYear}
+          placeholder="2023"
+          label="End Year"
+          required
+          onChange={(event) => setWorkExperience({ ...workExperience, endYear: event.currentTarget.value })}
+        />
       </form>
+      <SimpleGrid
+        className="work-experience-card-container"
+        cols={3}
+        spacing="sm"
+        breakpoints={[
+          { maxWidth: 1100, cols: 2, spacing: 'sm' },
+          { maxWidth: 850, cols: 1, spacing: 'sm' },
+        ]}>
+        {workExperienceElements}
+      </SimpleGrid>
+      <div className="work-experience-button-container">
+        <Button size="md" onClick={addWorkExperience}>
+          Add Work Experience
+        </Button>
+        <Button size="md" onClick={deleteWorkExperience}>
+          Delete Work Experience
+        </Button>
+      </div>
+      <div className="work-experienceSection-button-container">
+        <Button size="md" onClick={backToSkills}>
+          Go Back to Skills Section
+        </Button>
+        <Button size="md" onClick={continueToAwards}>
+          Continue to Awards Section
+        </Button>
+      </div>
     </div>
   )
 }

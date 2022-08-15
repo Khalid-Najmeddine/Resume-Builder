@@ -6,7 +6,7 @@ import Education from './Education.js'
 import Qualifications from './Qualifications.js'
 import WorkExperienceInformation from './WorkExperience.js'
 import Awards from './Awards.js'
-// import ResumePreview from './ResumePreview.js'
+// import ResumePreview from './ResumePreview.js'!
 
 function App() {
   const [showPages, setShowPages] = React.useState({
@@ -34,18 +34,6 @@ function App() {
   })
 
   // Education Information
-  // const [educationInfo, setEducationInfo] = React.useState({
-  //   collegeOrUniversity: '',
-  //   fieldOfStudy: '',
-  //   degreeOrProgram: '',
-  //   city: '',
-  //   stateOrProvince: '',
-  //   country: '',
-  //   postalCode: '',
-  //   email: '',
-  //   linkedInURL: '',
-  // })
-
   const [educationInfo, setEducationInfo] = React.useState([])
 
   //Summary of Qualifications
@@ -55,30 +43,8 @@ function App() {
   const [skillsInfo, setSkillsInfo] = React.useState([])
 
   // Work Experience
-  const [workExperienceInfo, setWorkExperienceInfo] = React.useState({
-    jobTitle: '',
-    companyOrOrganization: '',
-    city: '',
-    stateOrProvince: '',
-    country: '',
-    startMonth: '',
-    startYear: '',
-    endMonth: '',
-    endYear: '',
-  })
+  const [workExperienceInfo, setWorkExperienceInfo] = React.useState([])
 
-  // const [workExperienceInfo, setWorkExperienceInfo] = React.useState({
-  //   jobTitle: '',
-  //   companyOrOrganization: '',
-  //   city: '',
-  //   stateOrProvince: '',
-  //   country: '',
-  //   startMonth: '',
-  //   startYear: '',
-  //   endMonth: '',
-  //   endYear: '',
-  // })
-  
   // Awards
   const [awardsInfo, setAwardsInfo] = React.useState([])
 
@@ -86,8 +52,8 @@ function App() {
   // const [resumePreview, setResumePreview] = React.useState([])
 
   // console.log(showPages)
-  // console.log(contactInfo)
-  console.log(educationInfo)
+  console.log(contactInfo)
+  // console.log(educationInfo)
   // console.log(skillsInfo)
   // console.log(qualificationsInfo)
   // console.log(workExperienceInfo)

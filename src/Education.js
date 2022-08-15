@@ -1,6 +1,5 @@
-//Contact Information !!
 import React from 'react'
-import { Button, TextInput } from '@mantine/core'
+import { Button, TextInput, Card, Text, SimpleGrid } from '@mantine/core'
 
 function EducationInformation(props) {
   const { setShowPages, educationInfo, setEducationInfo } = props
@@ -11,14 +10,22 @@ function EducationInformation(props) {
     city: '',
     stateOrProvince: '',
     country: '',
-    postalCode: '',
-    email: '',
-    linkedInURL: '',
+    gradMonth: '',
+    gradYear: '',
   })
 
   function addEducation() {
     setEducationInfo((prevEducationInfo) => [...prevEducationInfo, education])
-    // setEducation('')
+    setEducation({
+      collegeOrUniversity: '',
+      fieldOfStudy: '',
+      degreeOrProgram: '',
+      city: '',
+      stateOrProvince: '',
+      country: '',
+      gradMonth: '',
+      gradYear: '',
+    })
   }
 
   function deleteEducation() {
@@ -40,6 +47,37 @@ function EducationInformation(props) {
       showQualificationsInfo: !prev.showQualificationsInfo,
     }))
   }
+
+  const educationElements = educationInfo.map((education) => {
+    return (
+      <Card shadow="sm" p="lg" radius="md" withBorder key={education.collegeOrUniversity}>
+        <Text>
+          <strong>College/University:</strong> {education.collegeOrUniversity}
+        </Text>
+        <Text>
+          <strong>Field of Study:</strong> {education.fieldOfStudy}
+        </Text>
+        <Text>
+          <strong>Degree/Program:</strong> {education.degreeOrProgram}
+        </Text>
+        <Text>
+          <strong>City:</strong> {education.city}
+        </Text>
+        <Text>
+          <strong>State/Province:</strong> {education.stateOrProvince}
+        </Text>
+        <Text>
+          <strong>Country:</strong> {education.country}
+        </Text>
+        <Text>
+          <strong>Grad Month:</strong> {education.gradMonth}
+        </Text>
+        <Text>
+          <strong>Grad Year:</strong> {education.gradYear}
+        </Text>
+      </Card>
+    )
+  })
 
   return (
     <div>
@@ -88,36 +126,46 @@ function EducationInformation(props) {
           onChange={(event) => setEducation({ ...education, country: event.currentTarget.value })}
         />
         <TextInput
-          value={education.graduationMonth}
+          value={education.gradMonth}
           placeholder="June"
           label="Graduation Month"
           required
-          onChange={(event) => setEducation({ ...education, graduationMonth: event.currentTarget.value })}
+          onChange={(event) => setEducation({ ...education, gradMonth: event.currentTarget.value })}
         />
         <TextInput
-          value={education.graduationYear}
+          value={education.gradYear}
           placeholder="2017"
           label="Graduation Year"
           required
-          onChange={(event) => setEducation({ ...education, graduationYear: event.currentTarget.value })}
+          onChange={(event) => setEducation({ ...education, gradYear: event.currentTarget.value })}
         />
-        <div className="education-button-container">
-          <Button size="md" onClick={addEducation}>
-            Add Education
-          </Button>
-          <Button size="md" onClick={deleteEducation}>
-            Delete Education
-          </Button>
-        </div>
-        <div className="educationSection-button-container">
-          <Button size="md" onClick={backToContactInformation}>
-            Go Back to Professional Contact Information Section
-          </Button>
-          <Button size="md" onClick={continueToQualifications}>
-            Continue to Summary of Qualifications Section
-          </Button>
-        </div>
       </form>
+      <SimpleGrid
+        className="education-card-container"
+        cols={3}
+        spacing="sm"
+        breakpoints={[
+          { maxWidth: 1100, cols: 2, spacing: 'sm' },
+          { maxWidth: 850, cols: 1, spacing: 'sm' },
+        ]}>
+        {educationElements}
+      </SimpleGrid>
+      <div className="education-button-container">
+        <Button size="md" onClick={addEducation}>
+          Add Education
+        </Button>
+        <Button size="md" onClick={deleteEducation}>
+          Delete Education
+        </Button>
+      </div>
+      <div className="educationSection-button-container">
+        <Button size="md" onClick={backToContactInformation}>
+          Go Back to Professional Contact Information Section
+        </Button>
+        <Button size="md" onClick={continueToQualifications}>
+          Continue to Summary of Qualifications Section
+        </Button>
+      </div>
     </div>
   )
 }
