@@ -3,30 +3,35 @@ function ResumePreview(props) {
   const { contactInfo, educationInfo, qualificationsInfo, skillsInfo, workExperienceInfo, awardsInfo } = props
 
   return (
-    <div>
+    <div className="resume-preview">
       <div className="contactinfo-preview">
-        <p>{contactInfo.firstName}</p>
-        <p>{contactInfo.lastName}</p>
-        <p>{contactInfo.email}</p>
-        <p>{contactInfo.phoneNumber}</p>
-        <p>{contactInfo.city}</p>
-        <p>{contactInfo.stateOrProvince}</p>
-        <p>{contactInfo.country}</p>
-        <p>{contactInfo.postalCode}</p>
-        <p>{contactInfo.linkedInURL}</p>
+        <h1>
+          {contactInfo.firstName} {contactInfo.lastName}
+        </h1>
+        <p>
+          <strong>{contactInfo.phoneNumber}</strong> | {contactInfo.email} |{' '}
+          <strong>
+            {contactInfo.city}, {contactInfo.stateOrProvince}, {contactInfo.country}, {contactInfo.postalCode} {''}
+          </strong>
+          | {contactInfo.linkedInURL}
+        </p>
       </div>
       <div className="education-preview">
+        <h2>Education</h2>
         {educationInfo.map((education) => {
           return (
             <div>
-              <p>{education.collegeOrUniversity}</p>
-              <p>{education.fieldOfStudy}</p>
-              <p>{education.degreeOrProgram}</p>
-              <p>{education.city}</p>
-              <p>{education.stateOrProvince}</p>
-              <p>{education.country}</p>
-              <p>{education.gradMonth}</p>
-              <p>{education.gradYear}</p>
+              <p>
+                <div className="education-preview-program-container">
+                  <strong>
+                    {education.degreeOrProgram}, {education.fieldOfStudy}
+                  </strong>
+                  <strong>
+                    {education.gradMonth}, {education.gradYear}
+                  </strong>
+                </div>
+                {education.collegeOrUniversity} | {education.city}, {education.stateOrProvince}, {education.country}
+              </p>
             </div>
           )
         })}

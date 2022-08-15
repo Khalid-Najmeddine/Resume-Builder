@@ -133,3 +133,12 @@ h3 {
   font-size: 1.2rem;
   font-family: 'Inter', sans-serif;
 }
+
+.contactinfo-preview {
+  text-align: center;
+}
+
+.education-preview-program-container {
+  display: flex;
+  justify-content: space-between;
+}
