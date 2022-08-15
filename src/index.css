@@ -4,14 +4,16 @@
 }
 
 body {
-  margin: 0;
+  margin: 20px 0px;
   width: 80%;
   margin-right: auto;
   margin-left: auto;
   font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
 }
 
@@ -37,6 +39,10 @@ h1, h2, h3 {
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+.education-card-container {
+  margin-top: 20px;
 }
 
 .education-button-container {
@@ -124,6 +130,3 @@ h1, h2, h3 {
   font-size: 1.2rem;
   font-family: 'Inter', sans-serif;
 }
-
-
-
