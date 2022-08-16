@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@mantine/core'
 
-function Homepage(props) {
+export default function Homepage(props) {
   const { setShowPages } = props
 
   function homePageButton() {
@@ -26,5 +26,3 @@ function Homepage(props) {
     </main>
   )
 }
-
-export default Homepage
