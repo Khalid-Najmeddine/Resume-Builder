@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button, TextInput} from '@mantine/core'
 
-function ContactInformation(props) {
+export default function ContactInformation(props) {
   const {setShowPages, contactInfo, setContactInfo} = props
   
     function backToHomepage() {
@@ -94,8 +94,5 @@ function ContactInformation(props) {
       </div>
      </form>
     </div>
-    
   )
 }
-
-export default ContactInformation
