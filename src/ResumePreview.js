@@ -1,6 +1,24 @@
-// Resume Preview (include an export to PDF feature after the alpha stage)
-function ResumePreview(props) {
-  const { contactInfo, educationInfo, qualificationsInfo, skillsInfo, workExperienceInfo, awardsInfo } = props
+import React from 'react'
+import { Button } from '@mantine/core'
+
+export default function ResumePreview(props) {
+  const { setShowPages, contactInfo, educationInfo, qualificationsInfo, skillsInfo, workExperienceInfo, awardsInfo } = props
+
+  function backToAwards() {
+    setShowPages((prev) => ({
+      ...prev,
+      showResumePreview: !prev.showResumePreview,
+      showAwardsInfo: !prev.showAwardsInfo,
+    }))
+  }
+
+  function exportDocumentToPDF() {
+    setShowPages((prev) => ({
+      ...prev,
+      showResumePreview: !prev.showResumePreview,
+      showExportToPDF: !prev.showExportToPDF,
+    }))
+  }
 
   return (
     <div className="resume-preview">
@@ -9,7 +27,7 @@ function ResumePreview(props) {
           {contactInfo.firstName} {contactInfo.lastName}
         </h1>
         <p>
-          <strong>{contactInfo.phoneNumber}</strong> | {contactInfo.email} |{' '}
+          <strong> {contactInfo.phoneNumber}</strong> | {contactInfo.email} |{' '}
           <strong>
             {contactInfo.city}, {contactInfo.stateOrProvince}, {contactInfo.country}, {contactInfo.postalCode} {''}
           </strong>
@@ -37,6 +55,7 @@ function ResumePreview(props) {
         })}
       </div>
       <div className="qualifications-preview">
+        <h2> Summary of Qualifications</h2>
         {qualificationsInfo.map((qualification) => {
           return (
             <div>
@@ -44,8 +63,10 @@ function ResumePreview(props) {
             </div>
           )
         })}
+
       </div>
       <div className="skills-preview">
+        <h2>Skills</h2>
         {skillsInfo.map((skill) => {
           return (
             <div>
@@ -55,23 +76,30 @@ function ResumePreview(props) {
         })}
       </div>
       <div className="work-preview">
+        <h2>Work Experience</h2>
         {workExperienceInfo.map((workExperience) => {
           return (
             <div>
-              <p>{workExperience.jobTitle}</p>
-              <p>{workExperience.companyOrOrganization}</p>
-              <p>{workExperience.city}</p>
-              <p>{workExperience.stateOrProvince}</p>
-              <p>{workExperience.country}</p>
-              <p>{workExperience.startMonth}</p>
-              <p>{workExperience.startYear}</p>
-              <p>{workExperience.endMonth}</p>
-              <p>{workExperience.endYear}</p>
+              <p>
+                <div className="work-preview-container">
+                  <strong>
+                    {workExperience.jobTitle}
+                  </strong>
+                  <strong>
+                    {workExperience.startMonth} {workExperience.startYear} - {workExperience.endMonth} {workExperience.endYear}
+                  </strong>
+                </div>
+                <div>
+                  {workExperience.companyOrOrganization} | {workExperience.city}, {workExperience.stateOrProvince}, {workExperience.country}
+                </div>
+              </p>
             </div>
           )
         })}
+
       </div>
       <div className="awards-preview">
+        <h2>Awards</h2>
         {awardsInfo.map((award) => {
           return (
             <div>
@@ -80,8 +108,14 @@ function ResumePreview(props) {
           )
         })}
       </div>
+      <div className="resume-preview-button-container">
+        <Button size="md" onClick={backToAwards}>
+          Go Back to Awards Section
+        </Button>
+        <Button size="md" onClick={exportDocumentToPDF}>
+          Export Document to PDF File
+        </Button>
+      </div>
     </div>
   )
 }
-
-export default ResumePreview
