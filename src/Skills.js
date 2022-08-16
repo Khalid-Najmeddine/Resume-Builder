@@ -1,7 +1,7 @@
 import { Button, Center, List, TextInput } from '@mantine/core'
 import React from 'react'
 
-function Skills(props) {
+export default function Skills(props) {
   const { skills, setSkills, setShowPages } = props
   const [skill, setSkill] = React.useState('')
 
@@ -56,7 +56,7 @@ function Skills(props) {
       </div>
       <div className="skills-button-container">
         <Button size="md" onClick={backToQualifications}>
-          Go Back to Summary of Qualification
+          Go Back to Summary of Qualifications
         </Button>
         <Button size="md" onClick={continueToWorkExperience}>
           Continue to Work Experience
@@ -65,5 +65,3 @@ function Skills(props) {
     </div>
   )
 }
-
-export default Skills
