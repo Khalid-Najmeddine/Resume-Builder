@@ -8,7 +8,7 @@ import WorkExperienceInformation from './WorkExperience.js'
 import Awards from './Awards.js'
 import ResumePreview from './ResumePreview.js'
 
-function App() {
+export default function App() {
   const [showPages, setShowPages] = React.useState({
     showHomepage: true,
     showContactInfo: false,
@@ -87,7 +87,7 @@ function App() {
       {showPages.showAwardsInfo && <Awards setShowPages={setShowPages} awards={awardsInfo} setAwards={setAwardsInfo} />}
       {showPages.showResumePreview && (
         <ResumePreview
-          // setShowPages={setShowPages}
+          setShowPages={setShowPages}
           contactInfo={contactInfo}
           educationInfo={educationInfo}
           qualificationsInfo={qualificationsInfo}
@@ -99,5 +99,3 @@ function App() {
     </div>
   )
 }
-
-export default App
