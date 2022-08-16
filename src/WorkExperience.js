@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, TextInput, Card, Text, List, SimpleGrid } from '@mantine/core'
+import { Button, TextInput, Card, Text, SimpleGrid } from '@mantine/core'
 
 export default function WorkExperienceInformation(props) {
   const { setShowPages, workExperienceInfo, setWorkExperienceInfo } = props
@@ -84,7 +84,6 @@ export default function WorkExperienceInformation(props) {
     )
   })
 
-  const workExperienceDescription = workExperienceInfo.map((workExperience) => <List.Item>{workExperience}</List.Item>)
 
   return (
     <div>
@@ -155,7 +154,6 @@ export default function WorkExperienceInformation(props) {
           required
           onChange={(event) => setWorkExperience({ ...workExperience, endYear: event.currentTarget.value })}
         />
-        <List className="work-Experience-list">{workExperienceDescription}</List>
       </form>
       <SimpleGrid
         className="work-experience-card-container"
