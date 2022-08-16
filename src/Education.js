@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, TextInput, Card, Text, SimpleGrid } from '@mantine/core'
 
-function EducationInformation(props) {
+export default function EducationInformation(props) {
   const { setShowPages, educationInfo, setEducationInfo } = props
   const [education, setEducation] = React.useState({
     collegeOrUniversity: '',
@@ -169,5 +169,3 @@ function EducationInformation(props) {
     </div>
   )
 }
-
-export default EducationInformation
