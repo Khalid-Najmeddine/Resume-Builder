@@ -1,7 +1,7 @@
 import { Button, Center, List, TextInput } from '@mantine/core'
 import React from 'react'
 
-function Qualifications(props) {
+export default function Qualifications(props) {
   const { qualificationsInfo, setQualificationsInfo, setShowPages } = props
   const [qualification, setQualification] = React.useState('')
 
@@ -68,5 +68,3 @@ function Qualifications(props) {
     </div>
   )
 }
-
-export default Qualifications
