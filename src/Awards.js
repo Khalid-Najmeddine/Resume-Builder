@@ -1,7 +1,7 @@
 import { Button, Center, List, TextInput } from '@mantine/core'
 import React from 'react'
 
-function Awards(props) {
+export default function Awards(props) {
   const { awards, setAwards, setShowPages } = props
   const [award, setAward] = React.useState('')
 
@@ -64,5 +64,3 @@ function Awards(props) {
     </div>
   )
 }
-
-export default Awards
